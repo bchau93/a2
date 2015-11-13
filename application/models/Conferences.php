@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-class Conferences extends CI_Model {
+class Conferences extends MY_Model {
 
     var $data = array(
         array('id' => '1', 'who' => 'Cincinati Bengals', 'wins' => '3', 'losses'=>'0',

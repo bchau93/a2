@@ -19,15 +19,18 @@ class Roster extends Application {
     
     function index() {
         
-        $this->data['pagebody'] = 'roster';
+        $this->data['pagebody'] = 'Roster/roster';
         
         $source = $this->rosters->all();
-        $players = array();
-        foreach ($source as $record) {
-            $players[] = array('playerName' => $record['playerName'], 'number' => $record['number'], 'position' => $record['position']);
-        }
-        $this->data['players'] = $players;
+//        $players = array();
+//        foreach ($source as $record) {
+//            $players[] = array('playerName' => $record['playerName'], 'number' => $record['number'], 'position' => $record['position']);
+//        }
+        $this->data['players'] = $source;
 
+//        var_dump($source);
+//        die();
+        
         $this->render();
     }
     
