@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('conferences', 'rosters','contents');
+$autoload['model'] = array('leagues', 'rosters','contents');
 
 
 /* End of file autoload.php */
