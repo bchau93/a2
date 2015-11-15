@@ -16,5 +16,14 @@ class Rosters extends MY_Model {
     public function __construct() {
         parent::__construct();
     }
+    
+    //fetch department details from database
+    function get_roster_list($start, $unit)
+    {
+        $sql = 'select * from rosters limit ' . ($start-1)*$unit . ', ' . $unit;
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
 
 }

@@ -34,6 +34,9 @@ if (!defined('APPPATH'))
                 <h1>{title}</h1>
                 {content}
             </div>
+            <div>
+                {pagination}
+            </div>
             <div id="footer" class="span12">
             </div>
         </div>
