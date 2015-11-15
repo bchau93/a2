@@ -8,4 +8,5 @@
     <div class="pagination-centered">
         {pagination}
     </div>
+    
 </div>
