@@ -4,6 +4,9 @@
         {players}
             <li>PLAYER:   {playerLastName}, {playerFirstName} JERSEY #:  {playerNumber} POSITION:  {playerPosition}</li>
         {/players}
-        </ul>
     </div>
+    <div class="pagination-centered">
+        {pagination}
+    </div>
+    
 </div>
