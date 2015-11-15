@@ -17,12 +17,40 @@ class League extends Application {
     //-------------------------------------------------------------
 
     function index() {
-        $this->data['pagebody'] = 'League/league';    // this is the view we want shown
-        // build the list of authors, to pass on to our view
-        $source = $this->leagues->all();
+        $this->data['pagebody'] = 'League/League';    
         
-        $this->data['teams'] = $source;
-
+        /*
+         * Calls the displayAFC() function to obtain an array of 
+         * each team in the AFC. After the data has been grabbed,
+         * the data will be displayed
+         */
+        $AFCSource = $this->leagues->displayAFC();
+        $AFC = array();        
+        foreach ($AFCSource as $rec) {
+                $AFC[] = array('id' => $rec['id'], 
+                    'city' => $rec['city'], 
+                    'conf' => $rec['conf'], 
+                    'division' => $rec['division'],
+                    'logo' => $rec['logo']);
+        }      
+        $this->data['AFC'] = $AFC;
+        
+        /*
+         * Calls the displayNFC() function to obtain an array of 
+         * each team in the NFC. After the data has been grabbed,
+         * the data will be displayed
+         */
+        $NFCSource = $this->leagues->displayNFC();
+        $NFC = array();
+        foreach ($NFCSource as $rec) {
+                $NFC[] = array('id' => $rec['id'], 
+                    'city' => $rec['city'], 
+                    'conf' => $rec['conf'], 
+                    'division' => $rec['division'],
+                    'logo' => $rec['logo']);
+        }
+        $this->data['NFC'] = $NFC;
+        
         $this->render();
     }
 
