@@ -14,7 +14,7 @@
 class Rosters extends MY_Model {
     
     public function __construct() {
-        parent::__construct();
+        parent::__construct("rosters", "id");
     }
     
     //fetch department details from database
@@ -24,6 +24,4 @@ class Rosters extends MY_Model {
         $query = $this->db->query($sql);
         return $query->result();
     }
-
-
 }
