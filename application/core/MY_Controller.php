@@ -25,6 +25,14 @@ class Application extends CI_Controller {
         $this->data['title'] = '';    // our default title
         $this->errors = array();
         $this->data['pageTitle'] = 'welcome';   // our default page
+    
+        if(!isset($_SESSION['defaultToggles']))
+        {
+            $_SESSION['defaultToggles'] = '1';
+            $_SESSION['order'] = 'playerLastName';
+            $_SESSION['layout'] = 'table';
+            $_SESSION['edit'] = 'editOff';
+        }
     }
 
     /**
@@ -38,7 +46,17 @@ class Application extends CI_Controller {
         $this->data['data'] = &$this->data;
         $this->parser->parse('_template', $this->data);
     }
-
+    
+    /*
+     * Check session for which view to load, then render it.
+     */
+    function go()
+    {
+        $this->session->layout == 'gallery' ? 
+                $this->data['pagebody'] = 'Roster/rosterGal' : 
+                $this->data['pagebody'] = 'Roster/rosterTab';   
+        $this->render();
+    }
 }
 
 /* End of file MY_Controller.php */
