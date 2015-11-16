@@ -6,7 +6,7 @@
                     <input type="radio" 
                            name="order" 
                            value="playerLastName" 
-                           nchange="toggle(this)" {nameDefault}>
+                           onchange="toggle(this)" {nameDefault}>
                         Name
                     </input>
                 </label>
@@ -77,7 +77,7 @@
         {players}
             <tr>
                 <th>
-                    <a href="roster/playerDetails/{id}">{playerLastName}, {playerFirstName}</a>
+                    <a href="playerDetails/{id}">{playerLastName}, {playerFirstName}</a>
                 </th>
                 <th>
                     {playerPosition}

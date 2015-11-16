@@ -63,7 +63,7 @@
         <br/>
         <table cols="3">
             {players}    
-            <a href="/Roster/playerDetails/{id}" title="{playerFirstName} {playerLastName} - {playerNumber}">
+            <a href="/playerDetails/{id}" title="{playerFirstName} {playerLastName} - {playerNumber}">
                 <img src="/assets/images/players/{playerPhoto}"  width="200px" height="150px"/>  
             </a> 
             {/players}

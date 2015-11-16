@@ -41,15 +41,17 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['Roster'] = "Roster";
-$route['Roster/playerDetails/(:num)'] = "Roster/playerDetails/$1";
-$route['Roster/page'] = "Roster/page/$1";
+$route['playerDetails/(:num)'] = "Roster/playerDetails/$1";
+$route['Roster/(:num)'] = "Roster/page/$1";
 $route['League'] = "League";
 $route['About'] = "About";
 $route['((playerLastName)|(playerNumber)|(playerPosition))'] = "Roster/order/$1";
 $route['((table)|(gallery))'] = "Roster/layout/$1";
 $route['edit'] = "Roster/editable";
-    
 
-
+$route['Roster/page/((playerLastName)|(playerNumber)|(playerPosition))'] = 'Roster/order/$1';
+$route['Roster/page/((table)|(gallery))'] = "Roster/layout/$1";
+$route['Roster/page/edit'] = "Roster/editable";
+$route['Roster/page/playerDetails/(:num)'] = "Roster/playerDetails/$1";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
