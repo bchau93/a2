@@ -1,15 +1,6 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Roster
- *
- * @author Lawrence
+ * Roster controller 
  */
 class Roster extends Application {
     
@@ -25,7 +16,10 @@ class Roster extends Application {
     
         
     }
-    
+    /*
+     * Default method called when Roster is in the URL.
+     * Pagination is done here for the first page.
+     */
     function index() {
         
         //pagination settings
@@ -45,6 +39,10 @@ class Roster extends Application {
         $this->go();
     }
     
+    /*
+     * Pagination method for accessing other pages with the page
+     * number buttons.
+     */
     function page($id) {
         //pagination settings
         $config['base_url'] = site_url('Roster/page');
@@ -64,6 +62,9 @@ class Roster extends Application {
         $this->go();   
     }
     
+    /*
+     * Function used to display the detail view of a player in the roster
+     */
     function playerDetails($id)
     {	
         $this->data['pagebody'] = 'Roster/playerInfo';    // this is the view we want shown
@@ -81,14 +82,18 @@ class Roster extends Application {
         $this->render();
     }
 
-    //Change toogle to order by name, number, or position
+    /*
+     * Change toogle to order by name, number, or position
+     */
     function order($filterByWhat)
     {
         $_SESSION['order'] = $filterByWhat;
         $this->index();
     }
     
-    //Change toggle for table or gallery view
+    /*
+     * Change layout toggle table or gallery
+     */
     function layout($typeOfLayout = 'table')
     {
         $typeOfLayout == 'gallery' ? 
@@ -97,7 +102,9 @@ class Roster extends Application {
         $this->index();
     }
     
-    //Change toggle for table or gallery view
+    /*
+     * Change toogle to turn edit on or off
+     */
     function editable()
     {
         $this->session->edit == 'editOff' ? 
@@ -106,6 +113,11 @@ class Roster extends Application {
         $this->index();
     }
     
+    /*
+     * Method used to inject css styling depending
+     * on edit toggle.
+     * Will use a hook for assignment 3.
+     */
     function ugly()
     {
         if($this->session->order == 'playerLastName')
