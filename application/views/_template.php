@@ -40,5 +40,6 @@ if (!defined('APPPATH'))
         </div>
         <script src="/assets/js/jquery-1.11.1.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/toggles.js"></script>
     </body>
 </html>
