@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2015 at 03:09 AM
+-- Generation Time: Nov 16, 2015 at 04:22 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -39,38 +39,38 @@ CREATE TABLE IF NOT EXISTS `leagues` (
 --
 
 INSERT INTO `leagues` (`id`, `city`, `conf`, `division`, `logo`) VALUES
-('Arizona Cardinals', 'Arizona', 'NFC', 'NFC WEST', ''),
-('Atlanta Falcons', 'Atlanta', 'NFC', 'NFC SOUTH', ''),
-('Baltimore Ravens', 'Baltimore', 'AFC', 'AFC NORTH', ''),
-('Buffalo Bills', 'Buffalo', 'AFC', 'AFC EAST', ''),
-('Carolina Panthers', 'Carolina', 'NFC', 'NFC SOUTH', ''),
-('Chicago Bears', 'Chicago', 'NFC', 'NFC NORTH', ''),
-('Cincinnati Bengals', 'Cincinnati', 'AFC', 'AFC North', ''),
-('Cleveland Browns', 'Cleveland', 'AFC', 'AFC NORTH', ''),
-('Dallas Cowboys', 'Dallas', 'NFC', 'NFC EAST', ''),
-('Denver Broncos', 'Denver', 'AFC', 'AFC WEST', ''),
-('Detroit Lions', 'Detroit', 'NFC', 'NFC NORTH', ''),
-('Green Bay Packers', 'Green Bay', 'NFC', 'NFC NORTH', ''),
-('Houston Texans', 'Houston', 'AFC', 'AFC SOUTH', ''),
-('Indianapolis Colts', 'Indianapolis', 'AFC', 'AFC SOUTH', ''),
-('Jacksonville Jaguars', 'Jacksonville', 'AFC', 'AFC SOUTH', ''),
-('Kansas City Chiefs', 'Kansas City', 'AFC', 'AFC WEST', ''),
-('Miami Dolphins', 'Miami', 'AFC', 'AFC EAST', ''),
-('Minnesota Vikings', 'Minnesota', 'NFC', 'NFC NORTH', ''),
-('New English Patriots', 'New England', 'AFC', 'AFC EAST', ''),
-('New Orleans Saints', 'New Orleans', 'NFC', 'NFC SOUTH', ''),
-('New York Giants', 'New York', 'NFC', 'NFC EAST', ''),
-('New York Jets', 'New York', 'AFC', 'AFC EAST', ''),
-('Oakland Raiders', 'Oakland', 'AFC', 'AFC WEST', ''),
-('Philadelphia Eagles', 'Philadelphia', 'NFC', 'NFC EAST', ''),
-('Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'AFC NORTH', ''),
-('San Diego Chargers', 'San Diego', 'AFC', 'AFC WEST', ''),
-('San Francisco 49ers', 'San Francisco', 'NFC', 'NFC WEST', ''),
-('Seattle Seahawks', 'Seattle', 'NFC', 'NFC WEST', ''),
-('St. Louis Rams', 'St. Louis', 'NFC', 'NFC WEST', ''),
-('Tampa Bay Buccaneers', 'Tampa Bay', 'NFC', 'NFC SOUTH', ''),
-('Tennessee Titans', 'Tennessee', 'AFC', 'AFC SOUTH', ''),
-('Washington Redskins', 'Washington', 'NFC', 'NFC EAST', '');
+('Arizona Cardinals', 'Arizona', 'NFC', 'NFC WEST', 'ACardinals.png'),
+('Atlanta Falcons', 'Atlanta', 'NFC', 'NFC SOUTH', 'AFalcons.png'),
+('Baltimore Ravens', 'Baltimore', 'AFC', 'AFC NORTH', 'BRavens.png'),
+('Buffalo Bills', 'Buffalo', 'AFC', 'AFC EAST', 'BBills.png'),
+('Carolina Panthers', 'Carolina', 'NFC', 'NFC SOUTH', 'CPanthers.png'),
+('Chicago Bears', 'Chicago', 'NFC', 'NFC NORTH', 'CBears.png'),
+('Cincinnati Bengals', 'Cincinnati', 'AFC', 'AFC North', 'Cbengals.png'),
+('Cleveland Browns', 'Cleveland', 'AFC', 'AFC NORTH', 'CBrowns.png'),
+('Dallas Cowboys', 'Dallas', 'NFC', 'NFC EAST', 'DCowboys.png'),
+('Denver Broncos', 'Denver', 'AFC', 'AFC WEST', 'DBroncos.png'),
+('Detroit Lions', 'Detroit', 'NFC', 'NFC NORTH', 'DLions.png'),
+('Green Bay Packers', 'Green Bay', 'NFC', 'NFC NORTH', 'GBPackers.png'),
+('Houston Texans', 'Houston', 'AFC', 'AFC SOUTH', 'HTexans.png'),
+('Indianapolis Colts', 'Indianapolis', 'AFC', 'AFC SOUTH', 'IColts.png'),
+('Jacksonville Jaguars', 'Jacksonville', 'AFC', 'AFC SOUTH', 'JJaguars.png'),
+('Kansas City Chiefs', 'Kansas City', 'AFC', 'AFC WEST', 'KCChiefs.png'),
+('Miami Dolphins', 'Miami', 'AFC', 'AFC EAST', 'MDolphins.png'),
+('Minnesota Vikings', 'Minnesota', 'NFC', 'NFC NORTH', 'MVikings.png'),
+('New English Patriots', 'New England', 'AFC', 'AFC EAST', 'NEPatriots.png'),
+('New Orleans Saints', 'New Orleans', 'NFC', 'NFC SOUTH', 'NOSaints.png'),
+('New York Giants', 'New York', 'NFC', 'NFC EAST', 'NYGiants.png'),
+('New York Jets', 'New York', 'AFC', 'AFC EAST', 'NYJets.png'),
+('Oakland Raiders', 'Oakland', 'AFC', 'AFC WEST', 'ORaiders.png'),
+('Philadelphia Eagles', 'Philadelphia', 'NFC', 'NFC EAST', 'PEagles.png'),
+('Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'AFC NORTH', 'PSteelers.png'),
+('San Diego Chargers', 'San Diego', 'AFC', 'AFC WEST', 'SDChargers.png'),
+('San Francisco 49ers', 'San Francisco', 'NFC', 'NFC WEST', 'SF49ers.png'),
+('Seattle Seahawks', 'Seattle', 'NFC', 'NFC WEST', 'SSeahawks.png'),
+('St. Louis Rams', 'St. Louis', 'NFC', 'NFC WEST', 'SLRams.png'),
+('Tampa Bay Buccaneers', 'Tampa Bay', 'NFC', 'NFC SOUTH', 'TBBuccaneers.png'),
+('Tennessee Titans', 'Tennessee', 'AFC', 'AFC SOUTH', 'TTitans.png'),
+('Washington Redskins', 'Washington', 'NFC', 'NFC EAST', 'WRedskins.png');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ INSERT INTO `rosters` (`id`, `playerFirstName`, `playerLastName`, `playerNumber`
 (12, 'Rex', 'Burkhead', 33, 'HB', 'Burkhead.jpg'),
 (13, 'Mike', 'Nugent', 2, 'K', 'Nugent.jpg'),
 (14, 'Chris', 'Carter', 51, 'LB', 'Carter.jpg'),
-(15, 'P.J.', 'Dawson', 47, 'LB', 'Dawson'.jpg),
+(15, 'P.J.', 'Dawson', 47, 'LB', 'Dawson.jpg'),
 (16, 'Jake', 'Fisher', 74, 'OT', 'Fisher.jpg'),
 (17, 'Andre', 'Smith', 71, 'OT', 'Smith.jpg'),
 (18, 'Andy', 'Dalton', 14, 'QB', 'Dalton.jpg'),
