@@ -61,6 +61,7 @@
                 </label>
             </div>
         </div>
+        <h2 {editable}><a href="Player/add">Add Player</a></h2>
         <br/>
         <table cols="3">
             {players}    
