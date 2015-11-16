@@ -1,4 +1,5 @@
 <div class="row">
+    <div class="text">
     <div class="errors">{message}</div>
   <form action="/player/confirm" method="post" enctype="multipart/form-data">
     {pid}
@@ -11,5 +12,6 @@
     {pdelete}
     {pcancel}
   </form>
+    </div>
 
 </div> 
