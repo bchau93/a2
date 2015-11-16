@@ -1,6 +1,8 @@
 <div class="row">
     <div class="text">
+        <h2>The Bengals Players</h2>
         <div id="toggles">
+            <h4>Sort Players By: </h4>
             <div id="orderToggles">
                 <label>
                     <input type="radio" 
@@ -28,6 +30,7 @@
                 </label>
             </div>
 
+            <h4>View Players By:</h4>
             <div id="layoutToggles">
                 <label>
                     <input type="radio" 
@@ -46,7 +49,7 @@
                     </input>
                 </label>
             </div>
-
+            <br/>
             <div id="editToggle">
                 <label>
                     <input type="checkbox" 
@@ -58,19 +61,15 @@
                 </label>
             </div>
         </div>
-
-        <h2>The Bengals Players</h2>
         <br/>
-        <table cols="3">
-            {players}    
+            {players}
             <a href="/Roster/playerDetails/{id}" title="{playerFirstName} {playerLastName} - {playerNumber}">
-                <img src="/assets/images/players/{playerPhoto}"  width="200px" height="150px"/>  
-            </a> 
+                <img src="/assets/images/players/{playerPhoto}" class="playerPhotoGallery"/>          
+            </a>
             {/players}
-        </table>
     </div>
     
-    <div class="pagination-centered">
+    <div class="pagination">
         {pagination}
     </div>
 </div>
