@@ -1,5 +1,14 @@
 /* CSS definition file containing site stylesheet */
-body {}
+body {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #content {
     width:100%; 
     margin-left:5% auto;
@@ -37,4 +46,12 @@ body {}
    display: block;
    margin-left: 12%;
    color: white;
+}
+
+.logo {
+    width: 125px;
+.errors {
+    color: black; 
+    font-weight:bold; 
+    font-size:large
 }

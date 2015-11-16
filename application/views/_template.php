@@ -34,10 +34,12 @@ if (!defined('APPPATH'))
                 <h1>{title}</h1>
                 {content}
             </div>
+            
             <div id="footer" class="span12">
             </div>
         </div>
         <script src="/assets/js/jquery-1.11.1.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/js/toggles.js"></script>
     </body>
 </html>

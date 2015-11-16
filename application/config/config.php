@@ -7,8 +7,9 @@ if (!defined('BASEPATH'))
 $config['menu_choices'] = array(
     'menudata' => array(
         array('name' => '<strong>ROSTER</strong>', 'link' => '/Roster'),
-        array('name' => '<strong>CONFERENCE</strong>', 'link' => '/Conference'),
-        array('name' => '<strong>ABOUT</strong>', 'link' => '/About')
+        array('name' => '<strong>LEAGUE</strong>', 'link' => '/League'),
+        array('name' => '<strong>ABOUT</strong>', 'link' => '/About'),
+        array('name' => '<strong>test</strong>', 'link' => '/test')
         )
     );
 
