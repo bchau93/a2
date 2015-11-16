@@ -1,12 +1,14 @@
 <div class="row">
     <div class="text">
+        <h2>The Bengals Players</h2>
         <div id="toggles">
+            <h4>Sort Players By: </h4>
             <div id="orderToggles">
                 <label>
                     <input type="radio" 
                            name="order" 
                            value="playerLastName" 
-                           nchange="toggle(this)" {nameDefault}>
+                           onchange="toggle(this)" {nameDefault}>
                         Name
                     </input>
                 </label>
@@ -28,6 +30,7 @@
                 </label>
             </div>
 
+            <h4>View Players By:</h4>
             <div id="layoutToggles">
                 <label>
                     <input type="radio" 
@@ -41,12 +44,12 @@
                     <input type="radio" 
                            name="layout" 
                            value="gallery" 
-                           onchange="toggle(this)" {galDefault}>
+                           onchange="toggle(this)" {galDefault}>    
                         Gallery
                     </input>
                 </label>
             </div>
-    
+            <br/>
             <div id="editToggle">
                 <label>
                     <input type="checkbox" 
@@ -58,7 +61,7 @@
                 </label>
             </div>
         </div>
-        <h1>The Bengals</h1><h2 {editable}><a href="Player/add">Add Player</a></h2>
+        <h4 {editable}><a href="Player/add">Add Player</a></h4>
         <table id="roster" class="text">
             <tr>
                 <th>
