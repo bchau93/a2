@@ -132,6 +132,11 @@ class Player extends Application {
     function confirm() {   
         
         $formSubmit = $this->input->post('submitButton');
+        if($formSubmit == "cancel"){
+            session_destroy();  
+            redirect("Roster");
+            return;
+        }
         // Extract submitted fields
         $_SESSION['player']->id = $this->input->post('id');
         $_SESSION['player']->playerFirstName = $this->input->post('playerFirstName');
@@ -161,6 +166,6 @@ class Player extends Application {
             
         }
         session_destroy();  
-        redirect("Roster/Index");
+        redirect("Roster");
     } 
 }

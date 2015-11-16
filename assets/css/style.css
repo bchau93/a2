@@ -32,7 +32,7 @@ body {
 .banner {
     display: block;
     margin: 0px 20px 0px 15px;
-    width: 87%;
+    width: 90%;
 }
 
 .text {
@@ -109,16 +109,19 @@ body {
     width: 125px;
 }
 
+label {
+    display: inline;
+}
+
 .playerPhotoGallery {
     width: 200px;
     height: 150px;
 }
 
 .playerPhoto {
-     width: 200%; 
-     height: 300px; 
+     height: 254px; 
 }
 
-#toggles {
-    
+table {
+    width: 200%;
 }

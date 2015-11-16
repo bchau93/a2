@@ -41,8 +41,13 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['Roster'] = "Roster";
+
 $route['playerDetails/(:num)'] = "Roster/playerDetails/$1";
 $route['Roster/(:num)'] = "Roster/page/$1";
+
+$route['Player/add'] = "Player/add";
+$route['Player/edit/(:num)'] = "Player/edit/$1";
+
 $route['League'] = "League";
 $route['About'] = "About";
 $route['((playerLastName)|(playerNumber)|(playerPosition))'] = "Roster/order/$1";
