@@ -33,36 +33,16 @@ class Roster extends Application {
         $config['total_rows'] = $this->db->count_all('rosters');
         $config['per_page'] = "12";
         $config['use_page_numbers'] = true;
-        /*$config["uri_segment"] = 3;
-        $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"] = floor($choice);
-        */
         $this->pagination->initialize($config);
         
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-
          //call the model function to get the department data
-        $this->data['players'] = $this->Rosters->get_roster_list(1, $config["per_page"]);           
-
+        $this->data['players'] = $this->rosters->get_roster_list(1, $config["per_page"]);  
         $this->data['pagination'] = $this->pagination->create_links();
-
-        //load the department_view
-       // $this->load->view('Roster/roster',$data);
-    
-        $this->data['pagebody'] = 'Roster/roster';
-    /*    
-        $source = $this->rosters->all();
-//        $players = array();
-//        foreach ($source as $record) {
-//            $players[] = array('playerName' => $record['playerName'], 'number' => $record['number'], 'position' => $record['position']);
-//        }
-        $this->data['players'] = $source;
-
-//        var_dump($source);
-//        die();
-      */  
-     
-        $this->render();
+        
+        $this->ugly();
+        
+        $this->go();
     }
     
     function page($id) {
@@ -71,20 +51,17 @@ class Roster extends Application {
         $config['total_rows'] = $this->db->count_all('rosters');
         $config['per_page'] = "12";
         $config['use_page_numbers'] = true;
-        
         $this->pagination->initialize($config);
-        
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 1;
 
          //call the model function to get the data
-        $this->data['players'] = $this->Rosters->get_roster_list($data['page'], $config["per_page"]);           
-
+        $this->data['players'] = $this->rosters->get_roster_list($data['page'], $config["per_page"]);           
         $this->data['pagination'] = $this->pagination->create_links();
-
-        $this->data['pagebody'] = 'Roster/roster';
+        $this->data['pagebody'] = 'Roster';
         
-        $this->render();
+        $this->ugly();
         
+        $this->go();   
     }
     
     function playerDetails($id)
@@ -102,5 +79,69 @@ class Roster extends Application {
 
         $this->data = array_merge($this->data, $player);
         $this->render();
+    }
+
+    //Change toogle to order by name, number, or position
+    function order($filterByWhat)
+    {
+        $_SESSION['order'] = $filterByWhat;
+        $this->index();
+    }
+    
+    //Change toggle for table or gallery view
+    function layout($typeOfLayout = 'table')
+    {
+        $typeOfLayout == 'gallery' ? 
+            $this->session->layout = 'gallery':
+            $this->session->layout = 'table';
+        $this->index();
+    }
+    
+    //Change toggle for table or gallery view
+    function editable()
+    {
+        $this->session->edit == 'editOff' ? 
+            $this->session->edit = 'editOn':
+            $this->session->edit = 'editOff';
+        $this->index();
+    }
+    
+    function ugly()
+    {
+        if($this->session->order == 'playerLastName')
+        {
+            $this->data['nameDefault'] = 'checked="true"';
+            $this->data['numDefault'] = '';
+            $this->data['posDefault'] = '';
+        } else if( $this->session->order == 'playerNumber' )
+        {
+            $this->data['nameDefault'] = '';
+            $this->data['numDefault'] = 'checked="true"';
+            $this->data['posDefault'] = '';
+        } else 
+        {
+            $this->data['nameDefault'] = '';
+            $this->data['numDefault'] = '';
+            $this->data['posDefault'] = 'checked="true"';
+        }
+        
+        if($this->session->layout == 'table')
+        {
+            $this->data['tabDefault'] = 'checked="true"';
+            $this->data['galDefault'] = '';
+        } else 
+        {
+            $this->data['tabDefault'] = '';
+            $this->data['galDefault'] = 'checked="true"';
+        }
+        if($this->session->edit == 'editOff')
+        {
+            $this->data['editDefault'] = '';
+            $this->data['editable'] = 'style="display: none"';
+        } else 
+        {
+            $this->data['editDefault'] = 'checked="true"';
+            $this->data['editable'] = '';
+        }
     }
 }
