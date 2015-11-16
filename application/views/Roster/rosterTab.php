@@ -97,7 +97,7 @@
         </table>
     </div>
     
-    <div class="pagination-centered">
+    <div class="pagination">
         {pagination}
     </div>
 </div>
