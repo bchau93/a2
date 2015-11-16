@@ -64,6 +64,23 @@ class Roster extends Application {
         $this->go();   
     }
     
+    function playerDetails($id)
+    {	
+        $this->data['pagebody'] = 'Roster/playerInfo';    // this is the view we want shown
+        $rec = $this->rosters->get($id);
+        
+        $player = array(
+            'id' => $rec->id, 
+            'playerName' => $rec->playerLastName . ", " . $rec->playerFirstName, 
+            'playerPhoto' => $rec->playerPhoto,
+            'playerNumber' => $rec->playerNumber, 
+            'playerPosition' => $rec->playerPosition
+        );
+
+        $this->data = array_merge($this->data, $player);
+        $this->render();
+    }
+
     //Change toogle to order by name, number, or position
     function order($filterByWhat)
     {

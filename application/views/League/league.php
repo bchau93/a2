@@ -16,7 +16,7 @@
         </table>
         
         <h2>NFL Teams - National Football Conference</h2>
-        <table>
+        <table width="600">
             {NFC}
                 <tr>
                     <td>
