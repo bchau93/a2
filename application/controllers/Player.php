@@ -101,8 +101,6 @@ class Player extends Application {
              $this->errors[] = 'You must specify a valid position'; 
     }
     
-  
-    
     function uploadIt(){
         $config['upload_path'] = './assets/images/players/';
         $config['allowed_types'] = 'gif|jpg|png';
@@ -150,7 +148,16 @@ class Player extends Application {
         }     
         if($formSubmit == 'editAdd' ){
             if($this->uploadIt() == null){
-                $_SESSION['player']->playerPhoto = "logo.gif";
+                $this->db->where('id', $_SESSION['player']->id);
+                $query = $this->db->get('rosters');
+                foreach ($query->result() as $row)
+                {
+                    $pic = $row->playerPhoto;
+                }   
+                if($pic == null){
+                    $_SESSION['player']->playerPhoto = "logo.gif";
+                }
+                
             }else{
                 $_SESSION['player']->playerPhoto = $this->uploadIt();
             }

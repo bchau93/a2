@@ -67,19 +67,26 @@ class Roster extends Application {
      */
     function playerDetails($id)
     {	
-        $this->data['pagebody'] = 'Roster/playerInfo';    // this is the view we want shown
-        $rec = $this->rosters->get($id);
         
-        $player = array(
-            'id' => $rec->id, 
-            'playerName' => $rec->playerLastName . ", " . $rec->playerFirstName, 
-            'playerPhoto' => $rec->playerPhoto,
-            'playerNumber' => $rec->playerNumber, 
-            'playerPosition' => $rec->playerPosition
-        );
+        if($this->session->edit == 'editOn'){
+            redirect("Player/edit/$id");
+        }else{
+            $this->data['pagebody'] = 'Roster/playerInfo';    // this is the view we want shown
+            $rec = $this->rosters->get($id);
 
-        $this->data = array_merge($this->data, $player);
-        $this->render();
+            $player = array(
+                'id' => $rec->id, 
+                'playerName' => $rec->playerLastName . ", " . $rec->playerFirstName, 
+                'playerPhoto' => $rec->playerPhoto,
+                'playerNumber' => $rec->playerNumber, 
+                'playerPosition' => $rec->playerPosition
+            );
+
+            $this->data = array_merge($this->data, $player);
+            $this->render();
+        }
+    
+        
     }
 
     /*
