@@ -44,7 +44,7 @@
                     <input type="radio" 
                            name="layout" 
                            value="gallery" 
-                           onchange="toggle(this)" {galDefault}>
+                           onchange="toggle(this)" {galDefault}>    
                         Gallery
                     </input>
                 </label>
