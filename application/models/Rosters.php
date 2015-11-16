@@ -14,7 +14,7 @@
 class Rosters extends MY_Model {
     
     public function __construct() {
-        parent::__construct();
+        parent::__construct('rosters', 'id');
     }
 
 }

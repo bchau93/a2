@@ -38,3 +38,9 @@ body {}
    margin-left: 12%;
    color: white;
 }
+
+.errors {
+    color: black; 
+    font-weight:bold; 
+    font-size:large
+}
