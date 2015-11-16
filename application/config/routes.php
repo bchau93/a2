@@ -42,6 +42,7 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['Roster'] = "Roster";
 $route['playerDetails/(:num)'] = "Roster/playerDetails/$1";
+$route['Roster/page'] = "Roster/page/$1";
 $route['Roster/(:num)'] = "Roster/page/$1";
 $route['Player/add'] = "Player/add";
 $route['Player/edit/(:num)'] = "Player/edit/$1";
@@ -52,6 +53,11 @@ $route['((table)|(gallery))'] = "Roster/layout/$1";
 $route['edit'] = "Roster/editable";
 
 //Handles pagination routes
+$route['Roster/((playerLastName)|(playerNumber)|(playerPosition))'] = "Roster/order/$1";
+$route['Roster/((table)|(gallery))'] = "Roster/layout/$1";
+$route['Roster/edit'] = "Roster/editable";
+$route['Roster/Player/add'] = "Player/add";
+$route['Roster/Player/edit/(:num)'] = "Player/edit/$1";
 $route['Roster/page/((playerLastName)|(playerNumber)|(playerPosition))'] = 'Roster/order/$1';
 $route['Roster/page/((table)|(gallery))'] = "Roster/layout/$1";
 $route['Roster/page/edit'] = "Roster/editable";

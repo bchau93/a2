@@ -101,15 +101,9 @@ class Player extends Application {
              $this->errors[] = 'You must specify a valid position'; 
     }
     
-    function validateFile($pname){
-        if ( empty($pname) || preg_match('/^[\w,\s-]+\.(gif|jpg|png)$/', $pname) == 0)
-             $this->errors[] = 'You must specify a valid file name';
-        if($pname != $_SESSION['file_name']){
-            $this->errors[] = 'Specified file name does not match uploaded file';
-        }
-    }
+  
     
-    function uploadIt($upload){
+    function uploadIt(){
         $config['upload_path'] = './assets/images/players/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']     = '100';
@@ -117,15 +111,17 @@ class Player extends Application {
         $config['max_height'] = '768';
         $config['detect_mime'] = true;
         $this->load->library('upload', $config);
-        //$this->upload->initialize($config);
+        $this->upload->initialize($config);
         if (!$this->upload->do_upload()) {
-            $this->errors[] = $this->upload->display_errors();
-            return false;
+            //$this->errors[] = $this->upload->display_errors();
+            return null;
 
         } else { //else, set the success message
             $data = array('msg' => "Upload success!");
-            $_SESSION['filename'] = $this->upload->data('file_name');
-            return true;
+            //$_SESSION['filename'] = $this->upload->data('file_name');
+            $file = $this->upload->data('photo');
+            $filename = $this->upload->data('file_name');
+            return $filename;
         }
     }
     
@@ -153,8 +149,11 @@ class Player extends Application {
             return;
         }     
         if($formSubmit == 'editAdd' ){
-            $this->uploadIt($this->input->post('userfile'));
-            $_SESSION['player']->playerPhoto = $_SESSION['filename'];
+            if($this->uploadIt() == null){
+                $_SESSION['player']->playerPhoto = "logo.gif";
+            }else{
+                $_SESSION['player']->playerPhoto = $this->uploadIt();
+            }
             if (empty($_SESSION['player']->id) ){
                 $this->rosters->add($_SESSION['player']);
             }else{
