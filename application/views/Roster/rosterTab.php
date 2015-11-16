@@ -58,7 +58,7 @@
                 </label>
             </div>
         </div>
-        <h1>The Bengals</h1><h2 {editable}><a href="/">Add Player</a></h2>
+        <h1>The Bengals</h1><h2 {editable}><a href="Player/add">Add Player</a></h2>
         <table id="roster" class="text">
             <tr>
                 <th>
@@ -86,7 +86,7 @@
                     {playerNumber}
                 </th>
                 <th>
-                    <h5 {editable}><a href="/">Edit</a></h5>
+                    <h5 {editable}><a href="/player/edit/{id}">Edit</a></h5>
                 </th>
             </tr>
         {/players}
