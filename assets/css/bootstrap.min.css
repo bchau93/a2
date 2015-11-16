@@ -991,8 +991,10 @@ input,button,select,textarea {
 }
 
 label {
-    display: block;
+    display: inline;
     margin-bottom: 5px
+
+
 }
 
 select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input {
@@ -4335,15 +4337,17 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 
 .breadcrumb>li>.divider {
     padding: 0 5px;
-    color: #ccc
+    color: #ccc;
 }
 
 .breadcrumb>.active {
-    color: #999
+    color: #999;
 }
 
 .pagination {
-    margin: 20px 0
+    margin: 20px 0;
+    font-size: 150%;
+    text-align: center;
 }
 
 .pagination ul {
@@ -4362,6 +4366,29 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 
 .pagination ul>li {
     display: inline
+}
+
+.pagination a, .pagination strong {
+    background: #fff;
+    display: inline-block;
+    margin-right: 3px;
+    padding: 4px 12px;
+    text-decoration: none;
+	line-height: 1.5em;	
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.pagination a:hover {
+    background-color: #BEBEBE;
+    color: #fff;
+}
+.pagination a:active {
+	background: rgba(190, 190, 190, 0.75);
+}
+.pagination strong {
+    color: #fff;
+    background-color: #BEBEBE;
 }
 
 .pagination ul>li>a,.pagination ul>li>span {
@@ -4408,12 +4435,12 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
     -moz-border-radius-bottomright: 4px
 }
 
-.pagination-centered {
-    text-align: center
+.pagination {
+    text-align: center;
 }
 
 .pagination-right {
-    text-align: right
+    text-align: right;
 }
 
 .pagination-large ul>li>a,.pagination-large ul>li>span {
@@ -7008,4 +7035,14 @@ body>.container.tabs-right.tabbable-bodered>.tab-content {
     -webkit-border-radius: 0 0 0 4px;
     -moz-border-radius: 0 0 0 4px;
     border-radius: 0 0 0 4px
+}
+
+.playerPhotoGallery {
+    width: 200px;
+    height: 150px;
+}
+
+.playerPhoto {
+     height: 254px;
+     width: 350;
 }
