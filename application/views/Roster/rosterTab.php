@@ -53,8 +53,9 @@
             <div id="editToggle">
                 <label>
                     <input type="checkbox" 
-                           name="edit" 
-                           value="edit" 
+                           name="edit"
+                           value="edit"
+                           onclick="test()"
                            onchange="toggleEdit(this)" {editDefault}>
                         Edit Players
                     </input>
@@ -90,7 +91,7 @@
                     {playerNumber}
                 </th>
                 <th>
-                    <h5 {editable}><a href="/player/edit/{id}">Edit</a></h5>
+                    <h5 class="editFields"><a href="/player/edit/{id}">Edit</a></h5>
                 </th>
             </tr>
         {/players}
