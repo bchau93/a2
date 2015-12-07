@@ -25,7 +25,10 @@ class History extends CI_Controller {
     function index()
     {
         $date = $this->histories->getMostRecent();
+        $yo = $this->histories->getPredicted('PIT');
         
+        var_dump($yo);
+        die();
 //        var_dump($date);
 //        die();
         
