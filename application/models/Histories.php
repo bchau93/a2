@@ -61,14 +61,14 @@ class Histories extends MY_Model2 {
         }
         
         $overallAverage = $this->getOverall($games) * 100;
-        $lastFiveAverage = $this->getLastFiveAverage($games) * 100;
-        $lastFiveOpponent = $this->getLastFiveAverage($gamesAgainst) * 100;
+        $lastFiveAverage = $this->getLastFiveAverage($games)* 100;
+        $lastFiveOpponent = $this->getLastFiveAverage($gamesAgainst)* 100;
         $predictPercent = (((.70) * $overallAverage) 
         + ((.20) * $lastFiveAverage) 
         + ((.10) * $lastFiveOpponent)) ;
         array_push($percentage, $overallAverage, $lastFiveAverage, $lastFiveOpponent, $predictPercent);
         return $percentage;
-        //return $this->getLastFiveAverage($games);
+        
     }
     
     
@@ -97,7 +97,6 @@ class Histories extends MY_Model2 {
         $totalGames = count($yo);
         $i = 0;
         $win = 0;
-    
         if(count($yo) < 5){
             return $this->getOverall($yo);
         }
@@ -111,9 +110,7 @@ class Histories extends MY_Model2 {
             else if ($yo[$i]->opponentTeam == 'CIN' && $matches[0][0] > $matches[0][1]){
                 $win++;
             }
-   
             $i++;
-            
         }
         return $win/5;
     }

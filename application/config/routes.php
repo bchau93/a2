@@ -66,5 +66,6 @@ $route['Roster/page/Player/add'] = "Player/add";
 $route['Roster/page/Player/edit/(:num)'] = "Player/edit/$1";
 
 $route['History'] = "History";
+$route['Welcome/showTeam'] = "Welcome/showTeam";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

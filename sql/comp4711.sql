@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2015 at 10:09 PM
+-- Generation Time: Dec 07, 2015 at 05:13 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -195,46 +195,58 @@ CREATE TABLE IF NOT EXISTS `leagues` (
   `city` varchar(30) NOT NULL,
   `conf` varchar(15) NOT NULL,
   `division` varchar(15) NOT NULL,
-  `logo` varchar(50) NOT NULL
+  `logo` varchar(50) NOT NULL,
+  `win` int(11) NOT NULL,
+  `loss` int(11) NOT NULL,
+  `ties` int(11) NOT NULL,
+  `pf` int(4) NOT NULL,
+  `pa` int(4) NOT NULL,
+  `netpts` int(4) NOT NULL,
+  `homew` varchar(5) NOT NULL,
+  `roadw` varchar(5) NOT NULL,
+  `divw` varchar(5) NOT NULL,
+  `confscore` varchar(5) NOT NULL,
+  `nonconfscore` varchar(5) NOT NULL,
+  `streak` varchar(3) NOT NULL,
+  `last5` varchar(5) NOT NULL,
+  `teamCode` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `leagues`
 --
 
-INSERT INTO `leagues` (`id`, `city`, `conf`, `division`, `logo`) VALUES
-('Arizona Cardinals', 'Arizona', 'NFC', 'NFC WEST', 'ACardinals.png'),
-('Atlanta Falcons', 'Atlanta', 'NFC', 'NFC SOUTH', 'AFalcons.png'),
-('Baltimore Ravens', 'Baltimore', 'AFC', 'AFC NORTH', 'BRavens.png'),
-('Buffalo Bills', 'Buffalo', 'AFC', 'AFC EAST', 'BBills.png'),
-('Carolina Panthers', 'Carolina', 'NFC', 'NFC SOUTH', 'CPanthers.png'),
-('Chicago Bears', 'Chicago', 'NFC', 'NFC NORTH', 'CBears.png'),
-('Cincinnati Bengals', 'Cincinnati', 'AFC', 'AFC North', 'Cbengals.png'),
-('Cleveland Browns', 'Cleveland', 'AFC', 'AFC NORTH', 'CBrowns.png'),
-('Dallas Cowboys', 'Dallas', 'NFC', 'NFC EAST', 'DCowboys.png'),
-('Denver Broncos', 'Denver', 'AFC', 'AFC WEST', 'DBroncos.png'),
-('Detroit Lions', 'Detroit', 'NFC', 'NFC NORTH', 'DLions.png'),
-('Green Bay Packers', 'Green Bay', 'NFC', 'NFC NORTH', 'GBPackers.png'),
-('Houston Texans', 'Houston', 'AFC', 'AFC SOUTH', 'HTexans.png'),
-('Indianapolis Colts', 'Indianapolis', 'AFC', 'AFC SOUTH', 'IColts.png'),
-('Jacksonville Jaguars', 'Jacksonville', 'AFC', 'AFC SOUTH', 'JJaguars.png'),
-('Kansas City Chiefs', 'Kansas City', 'AFC', 'AFC WEST', 'KCChiefs.png'),
-('Miami Dolphins', 'Miami', 'AFC', 'AFC EAST', 'MDolphins.png'),
-('Minnesota Vikings', 'Minnesota', 'NFC', 'NFC NORTH', 'MVikings.png'),
-('New English Patriots', 'New England', 'AFC', 'AFC EAST', 'NEPatriots.png'),
-('New Orleans Saints', 'New Orleans', 'NFC', 'NFC SOUTH', 'NOSaints.png'),
-('New York Giants', 'New York', 'NFC', 'NFC EAST', 'NYGiants.png'),
-('New York Jets', 'New York', 'AFC', 'AFC EAST', 'NYJets.png'),
-('Oakland Raiders', 'Oakland', 'AFC', 'AFC WEST', 'ORaiders.png'),
-('Philadelphia Eagles', 'Philadelphia', 'NFC', 'NFC EAST', 'PEagles.png'),
-('Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'AFC NORTH', 'PSteelers.png'),
-('San Diego Chargers', 'San Diego', 'AFC', 'AFC WEST', 'SDChargers.png'),
-('San Francisco 49ers', 'San Francisco', 'NFC', 'NFC WEST', 'SF49ers.png'),
-('Seattle Seahawks', 'Seattle', 'NFC', 'NFC WEST', 'SSeahawks.png'),
-('St. Louis Rams', 'St. Louis', 'NFC', 'NFC WEST', 'SLRams.png'),
-('Tampa Bay Buccaneers', 'Tampa Bay', 'NFC', 'NFC SOUTH', 'TBBuccaneers.png'),
-('Tennessee Titans', 'Tennessee', 'AFC', 'AFC SOUTH', 'TTitans.png'),
-('Washington Redskins', 'Washington', 'NFC', 'NFC EAST', 'WRedskins.png');
+INSERT INTO `leagues` (`id`, `city`, `conf`, `division`, `logo`, `win`, `loss`, `ties`, `pf`, `pa`, `netpts`, `homew`, `roadw`, `divw`, `confscore`, `nonconfscore`, `streak`, `last5`, `teamCode`) VALUES
+('Arizona Cardinals', 'Arizona', 'NFC', 'NFC WEST', 'ACardinals.png', 7, 2, 0, 302, 185, 117, '3-1', '4-1', '2-1', '5-1', '2-1', '3W', '4-1', 'ARI'),
+('Atlanta Falcons', 'Atlanta', 'NFC', 'NFC SOUTH', 'AFalcons.png', 6, 3, 0, 229, 190, 39, '3-1', '3-2', '0-2', '4-3', '2-0', '2W', '2-3', 'ATL'),
+('Baltimore Ravens', 'Baltimore', 'AFC', 'AFC NORTH', 'BRavens.png', 2, 7, 0, 210, 236, -26, '1-3', '1-4', '1-2', '2-5', '0-2', '1W', '1-4', 'BAL'),
+('Buffalo Bills', 'Buffalo', 'AFC', 'AFC EAST', 'BBills.png', 5, 4, 0, 231, 207, 24, '2-3', '3-1', '3-1', '5-3', '0-1', '2W', '3-2', 'BUF'),
+('Carolina Panthers', 'Carolina', 'NFC', 'NFC SOUTH', 'CPanthers.png', 9, 0, 0, 255, 175, 80, '5-0', '4-0', '2-0', '5-0', '4-0', '9W', '5-0', 'CAR'),
+('Cincinnati Bengals', 'Cincinnati', 'AFC', 'AFC North', 'Cbengals.png', 8, 0, 0, 229, 142, 87, '4-0', '4-0', '3-0', '7-0', '1-0', '8W', '5-0', 'CIN'),
+('Cleveland Browns', 'Cleveland', 'AFC', 'AFC NORTH', 'CBrowns.png', 2, 8, 0, 186, 277, -91, '1-3', '1-5', '1-2', '2-6', '0-2', '5W', '0-5', 'CLE'),
+('Dallas Cowboys', 'Dallas', 'NFC', 'NFC EAST', 'DCowboys.png', 2, 7, 0, 166, 214, -48, '1-4', '1-3', '2-2', '2-6', '0-1', '7W', '0-5', 'DAL'),
+('Denver Broncos', 'Denver', 'AFC', 'AFC WEST', 'DBroncos.png', 7, 2, 0, 205, 168, 37, '3-1', '4-1', '2-1', '4-2', '3-0', '2W', '3-2', 'DEN'),
+('Detroit Lions', 'Detroit', 'NFC', 'NFC NORTH', 'DLions.png', 2, 7, 0, 167, 261, -94, '1-3', '1-4', '2-2', '2-4', '0-3', '1W', '2-3', 'DET'),
+('Green Bay Packers', 'Green Bay', 'NFC', 'NFC NORTH', 'GBPackers.png', 6, 3, 0, 219, 185, 34, '4-1', '2-2', '1-1', '4-2', '2-1', '3W', '2-3', 'GB'),
+('Houston Texans', 'Houston', 'AFC', 'AFC SOUTH', 'HTexans.png', 3, 5, 0, 174, 205, -31, '2-2', '1-3', '2-1', '2-3', '1-2', '1W', '2-3', 'HOU'),
+('Indianapolis Colts', 'Indianapolis', 'AFC', 'AFC SOUTH', 'IColts.png', 4, 5, 0, 200, 227, -27, '2-3', '2-2', '3-0', '4-3', '0-2', '1W', '2-3', 'IND'),
+('Kansas City Chiefs', 'Kansas City', 'AFC', 'AFC WEST', 'KCChiefs.png', 4, 5, 0, 224, 195, 29, '2-2', '2-3', '1-1', '3-2', '1-3', '3W', '3-2', 'KC'),
+('Miami Dolphins', 'Miami', 'AFC', 'AFC EAST', 'MDolphins.png', 4, 5, 0, 191, 225, -34, '1-2', '3-3', '0-4', '2-5', '2-0', '1W', '3-2', 'MIA'),
+('Minnesota Vikings', 'Minnesota', 'NFC', 'NFC NORTH', 'MVikings.png', 7, 2, 0, 198, 154, 44, '4-0', '3-2', '3-0', '4-1', '3-1', '5W', '5-0', 'MIN'),
+('New England Patriots', 'New England', 'AFC', 'AFC EAST', 'NEPatriots.png', 9, 0, 0, 303, 169, 134, '5-0', '4-0', '3-0', '6-0', '3-0', '9W', '5-0', 'NE'),
+('New Orleans Saints', 'New Orleans', 'NFC', 'NFC SOUTH', 'NOSaints.png', 4, 6, 0, 255, 315, -60, '3-2', '1-4', '1-2', '3-5', '1-1', '2W', '3-2', 'NO'),
+('New York Giants', 'New York', 'NFC', 'NFC EAST', 'NYGiants.png', 5, 5, 0, 273, 253, 20, '3-2', '2-3', '2-2', '4-4', '1-1', '1W', '2-3', 'NYG'),
+('New York Jets', 'New York', 'AFC', 'AFC EAST', 'NYJets.png', 5, 4, 0, 217, 184, 33, '3-2', '2-2', '1-2', '4-3', '1-1', '1W', '2-3', 'NYJ'),
+('Oakland Raiders', 'Oakland', 'AFC', 'AFC WEST', 'ORaiders.png', 4, 5, 0, 227, 241, -14, '2-3', '2-2', '1-1', '4-3', '0-2', '2W', '2-3', 'OAK'),
+('Philadelphia Eagles', 'Philadelphia', 'NFC', 'NFC EAST', 'PEagles.png', 4, 5, 0, 212, 184, 28, '2-2', '2-3', '2-2', '3-4', '1-1', '1W', '3-2', 'PHI'),
+('Pittsburgh Steelers', 'Pittsburgh', 'AFC', 'AFC NORTH', 'PSteelers.png', 6, 4, 0, 236, 191, 45, '4-2', '2-2', '1-2', '3-4', '3-0', '2W', '3-2', 'PIT'),
+('San Diego Chargers', 'San Diego', 'AFC', 'AFC WEST', 'SDChargers.png', 2, 7, 0, 210, 249, -39, '2-3', '0-4', '0-1', '1-4', '1-3', '5W', '0-5', 'SD'),
+('San Francisco 49ers', 'San Francisco', 'NFC', 'NFC WEST', 'SF49ers.png', 3, 6, 0, 126, 223, -97, '3-2', '0-4', '0-3', '2-5', '1-1', '1W', '2-3', 'SF'),
+('Seattle Seahawks', 'Seattle', 'NFC', 'NFC WEST', 'SSeahawks.png', 4, 5, 0, 199, 179, 20, '2-2', '2-3', '1-2', '4-4', '0-1', '1W', '2-3', 'SEA'),
+('St. Louis Rams', 'St. Louis', 'NFC', 'NFC WEST', 'SLRams.png', 4, 5, 0, 166, 183, -17, '3-2', '1-3', '3-0', '3-4', '1-1', '2W', '2-3', 'STL'),
+('Tampa Bay Buccaneers', 'Tampa Bay', 'NFC', 'NFC SOUTH', 'TBBuccaneers.png', 4, 5, 0, 191, 237, -46, '2-3', '2-2', '2-1', '3-3', '1-2', '1W', '3-2', 'TB'),
+('Tennessee Titans', 'Tennessee', 'AFC', 'AFC SOUTH', 'TTitans.png', 2, 7, 0, 169, 214, -45, '0-5', '2-2', '0-2', '0-5', '2-2', '1W', '1-4', 'TEN'),
+('Washington Redskins', 'Washington', 'NFC', 'NFC EAST', 'WRedskins.png', 4, 5, 0, 205, 209, -4, '4-1', '0-4', '1-1', '4-2', '0-3', '1W', '2-3', 'WAS');
 
 -- --------------------------------------------------------
 
@@ -244,12 +256,12 @@ INSERT INTO `leagues` (`id`, `city`, `conf`, `division`, `logo`) VALUES
 
 CREATE TABLE IF NOT EXISTS `rosters` (
   `id` int(11) NOT NULL,
-  `playerFirstName` varchar(20) NOT NULL,
-  `playerLastName` varchar(20) NOT NULL,
+  `playerFirstName` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `playerLastName` varchar(20) CHARACTER SET utf8 NOT NULL,
   `playerNumber` int(3) NOT NULL,
-  `playerPosition` varchar(2) NOT NULL,
-  `playerPhoto` varchar(535) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+  `playerPosition` varchar(2) CHARACTER SET utf8 NOT NULL,
+  `playerPhoto` varchar(535) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rosters`
@@ -276,14 +288,11 @@ INSERT INTO `rosters` (`id`, `playerFirstName`, `playerLastName`, `playerNumber`
 (18, 'Andy', 'Dalton', 14, 'QB', 'Dalton.jpg'),
 (19, 'AJ', 'McCarron', 5, 'QB', 'McCarron.jpg'),
 (20, 'Mario', 'Alford', 15, 'WR', 'Alford.jpg'),
-(21, 'Eric', 'Winston', 73, 'OT', NULL),
+(21, 'Eric', 'Winston', 73, 'OT', 'Winston.jpg'),
 (23, 'Shawn', 'Williams', 36, 'S', 'Williams.jpg'),
 (24, 'C.J.', 'Uzomah', 87, 'TE', 'Uzomah.jpg'),
 (26, 'Brandon', 'Thompson', 98, 'DT', 'Thompson.jpg'),
-(28, 'Vincent', 'Rey', 57, 'LB', 'Rey.jpg'),
-(29, 'lawrence', 'sarmiento', 26, 'QB', 'groot_mantis_paul_pelletier011.jpg'),
-(30, 'Julia', 'Yiu', 12, 'QB', 'logo.png'),
-(31, 'Yoonseok', 'Yoo', 32, 'K', 'logo.gif');
+(28, 'Vincent', 'Rey', 57, 'LB', 'Rey.jpg');
 
 --
 -- Indexes for dumped tables
@@ -294,12 +303,6 @@ INSERT INTO `rosters` (`id`, `playerFirstName`, `playerLastName`, `playerNumber`
 --
 ALTER TABLE `histories`
   ADD PRIMARY KEY (`date`,`homeTeam`);
-
---
--- Indexes for table `leagues`
---
-ALTER TABLE `leagues`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `rosters`
